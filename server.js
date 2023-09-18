@@ -1,6 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
-import { getAllStudent } from "./controllers/studentControllers.js"
+import userRouter from "./Routers/users.js"
 
 // environment var
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: false }))
 app.use(express.static("public"))
 
 
-app.get("/student",getAllStudent)
+app.use(userRouter)
 
 
 
